@@ -4,7 +4,7 @@
 
     <div class="row detalle">
         <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-            <img src="/storage/imagenesevento/{{$event->image}}" alt="Foto">
+            <img src="/public/storage/imagenesevento/{{$event->image}}" alt="Foto">
         </div>
         <div class="col-12 col-sm-12 col-md-6 col-lg-6">
             <h4>{{$event->name}}</h4>

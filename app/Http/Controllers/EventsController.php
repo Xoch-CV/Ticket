@@ -75,7 +75,7 @@ class EventsController extends Controller
         $this->validate($request, $reglas, $mensaje);
         $eventoNuevo = new Event();
 
-        $ruta = $request->file("image")->store("public/imagenesevento");
+        $ruta = $request->file("image")->store("public/storage/imagenesevento");
         $nombreArchivo = basename($ruta);
 
         $eventoNuevo->image=$nombreArchivo;

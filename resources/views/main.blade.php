@@ -19,7 +19,7 @@
         <div class="carousel-inner" role="listbox">
           <!-- Primer slide -->
           <div class="carousel-item active">
-            <img src="{{asset('public/storage/Slider-01.jpg')}}" alt="">
+            <img src="{{asset('storage/Slider-01.jpg')}}" alt="">
             <div class="carousel-caption">
               <h2>La Odisea de los Giles</h2>
               <p class="lead">Se metieron con los perdedores equivocados.</p>
@@ -27,7 +27,7 @@
           </div>
           <!-- Segundo slide -->
           <div class="carousel-item">
-            <img src="{{asset('public/storage/Slider-02.jpg')}}" alt="">
+            <img src="{{asset('storage/Slider-02.jpg')}}" alt="">
             <div class="carousel-caption">
               <h2>Messi 10</h2>
 
@@ -36,7 +36,7 @@
           </div>
           <!-- Tercer slide -->
           <div class="carousel-item">
-          <img src="{{asset('public/storage/Slider-03.jpg')}}" alt="">
+          <img src="{{asset('storage/Slider-03.jpg')}}" alt="">
             <div class="carousel-caption">
               <h2>Metallica</h2>
               <p class="lead">18 de abril. Campo Argentino de Polo.</p>
@@ -100,7 +100,7 @@
             <div class="col-12 col-sm-12 col-md-6 col-lg-5 card-body">
               <div class="row">
                 <div class="col-12 col-sm-12 col-md-4 col-lg-3">
-                  <img src="public/storage/imagenesevento/{{$event->image}}" alt="{{$event->name}}">
+                  <img src="storage/imagenesevento/{{$event->image}}" alt="{{$event->name}}">
                 </div>
                 <div class="col-12 col-sm-12 col-md-7 col-lg-8">
                   <h3 class="card-title"><b>{{$event->name}}</b></h3>

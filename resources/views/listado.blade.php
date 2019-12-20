@@ -27,7 +27,7 @@
         <div class="card">
 
           <div class="contenedor">
-            <img src="/public/storage/imagenesevento/{{$event->image}}" alt="Foto">
+            <img src="storage/imagenesevento/{{$event->image}}" alt="Foto">
 
           </div>
 

@@ -30,7 +30,6 @@ class EventsController extends Controller
         else{
           $events = Event::paginate(10)->appends($request->only('q'));
         }
-
         return view("listado")->with("events", $events);
     }
 
@@ -42,7 +41,6 @@ class EventsController extends Controller
     public function create()
     {
       $this->authorize('create', Event::class);
-
         return view('events.create');
     }
 
@@ -75,7 +73,7 @@ class EventsController extends Controller
         $this->validate($request, $reglas, $mensaje);
         $eventoNuevo = new Event();
 
-        $ruta = $request->file("image")->store("public/storage/imagenesevento");
+        $ruta = $request->file("image")->store("public/imagenesevento");
         $nombreArchivo = basename($ruta);
 
         $eventoNuevo->image=$nombreArchivo;
@@ -92,8 +90,6 @@ class EventsController extends Controller
         return view('/detalle')->with("event", $eventoNuevo);
 
         /*Event::create($request->all());*/
-
-
     }
 
     /**
@@ -104,10 +100,8 @@ class EventsController extends Controller
      */
     public function show(Event $event)
     {
-
       //$this->authorize('edit', $event);
       return view("detalle")->with("event", $event);
-
     }
 
     /**
@@ -119,7 +113,6 @@ class EventsController extends Controller
     public function edit(Event $event)
     {
       $this->authorize('edit', $event);
-
         return view('events.edit')->with("event", $event);
     }
 
@@ -152,6 +145,7 @@ class EventsController extends Controller
 
       $this->validate($request, $reglas, $mensaje);
       $eventoObjeto = new Event();
+
       $ruta = $request->file("image")->store("public/imagenesevento");
       $nombreArchivo = basename($ruta);
 
@@ -164,15 +158,12 @@ class EventsController extends Controller
       $eventoObjeto->category_id=$request["category_id"];
       $eventoObjeto->user_id=1;
 
-
     $eventoArray = $eventoObjeto->toArray();
-
 
         Event::find($idevent)->update($eventoArray);
         return view('/detalle')->with("event", $eventoObjeto);
-
     }
-
+    
     /**
      * Remove the specified resource from storage.
      *
@@ -182,10 +173,8 @@ class EventsController extends Controller
     public function destroy(Request $req)
     {
       $events=Event::find($req->get('id'));
-
       $this->authorize('destroy', $events);
       $events->delete();
-
       return redirect('/events');
     }
     }
